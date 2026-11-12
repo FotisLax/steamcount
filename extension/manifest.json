@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "SteamCount",
+  "version": "0.1.0",
+  "description": "Search any Steam game and see its current players and recent change.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SteamCount"
+  },
+  "host_permissions": ["http://localhost:8000/*"]
+}
