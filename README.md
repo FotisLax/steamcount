@@ -12,4 +12,9 @@ So i created this extension that collects Steam player counts into PostgreSQL an
 4. API docs: http://localhost:8000/docs
 
 ## For those who just want the browser extension:
-Its coming!!
+1. Download the extension folder.
+2. Go to your browser and open the extensions tab.
+3. Enable developer mode.
+4. Click "Load Unpacked" and select the extension folder.
+5. Now check the extension on your browser and type any game on Steam.
+6. Enjoy!
