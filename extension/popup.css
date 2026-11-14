@@ -1,4 +1,6 @@
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
 body {
   width: 340px;
   min-height: 160px;
@@ -7,49 +9,156 @@ body {
   background: #171a21;
   color: #e6edf3;
   font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  border-top: 3px solid #66c0f4;
 }
-h1 { margin: 0 0 10px; font-size: 16px; color: #66c0f4; }
+
+h1 {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2a3140;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #66c0f4;
+}
+
 input {
   width: 100%;
-  padding: 9px 10px;
-  border: 1px solid #2a3140;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border: 1px solid #3a4558;
+  border-radius: 8px;
   background: #0f1218;
   color: inherit;
   font-size: 14px;
+  font-weight: 500;
 }
-input:focus { outline: 2px solid #66c0f4; border-color: transparent; }
-#status { margin: 8px 0 0; min-height: 18px; color: #8b98a9; font-size: 12px; }
-ul { list-style: none; margin: 6px 0 0; padding: 0; max-height: 300px; overflow-y: auto; }
+input::placeholder { color: #6b7789; font-weight: 400; }
+input:focus {
+  outline: none;
+  border-color: #66c0f4;
+  box-shadow: 0 0 0 3px rgba(102, 192, 244, 0.25);
+}
+
+#status {
+  margin: 8px 0 0;
+  min-height: 18px;
+  color: #8b98a9;
+  font-size: 12px;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #2a3140;
+  border-radius: 8px;
+  background: #0f1218;
+}
+ul:empty { display: none; }
+li + li { border-top: 1px solid #232a38; }
 li button {
   width: 100%;
-  padding: 8px 10px;
+  padding: 9px 12px;
   border: 0;
-  border-radius: 6px;
+  border-left: 3px solid transparent;
   background: transparent;
   color: inherit;
   text-align: left;
   font: inherit;
+  font-weight: 500;
   cursor: pointer;
 }
-li button:hover, li button:focus { background: #232a38; outline: none; }
+li button:hover, li button:focus {
+  outline: none;
+  border-left-color: #66c0f4;
+  background: #1c2230;
+}
+
+#detail {
+  padding: 14px;
+  border: 1px solid #2a3140;
+  border-radius: 10px;
+  background: #0f1218;
+}
+
 .back {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   padding: 0;
   border: 0;
   background: none;
   color: #66c0f4;
   font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   cursor: pointer;
 }
-.name { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
-.players { margin: 0; font-size: 30px; font-weight: 700; }
-.label { margin: 0 0 12px; color: #8b98a9; font-size: 12px; }
+.back:hover { text-decoration: underline; }
+
+.name {
+  margin: 0 0 6px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a3140;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.players {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.label {
+  margin: 4px 0 14px;
+  color: #8b98a9;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .changes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.chg { padding: 8px; border-radius: 8px; background: #0f1218; text-align: center; }
-.chg .when { display: block; color: #8b98a9; font-size: 11px; }
-.chg .val { display: block; margin-top: 2px; font-size: 16px; font-weight: 600; }
+.chg {
+  padding: 9px 6px;
+  border: 1px solid #2a3140;
+  border-radius: 8px;
+  background: #171a21;
+  text-align: center;
+}
+.chg:has(.up)   { border-color: #2f6b3d; }
+.chg:has(.down) { border-color: #7a3a3a; }
+.chg .when {
+  display: block;
+  color: #8b98a9;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.chg .val {
+  display: block;
+  margin-top: 3px;
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
 .up { color: #4cd964; }
 .down { color: #ff6b6b; }
 .flat, .na { color: #8b98a9; }
-.note { margin: 12px 0 0; color: #8b98a9; font-size: 12px; }
+
+.note {
+  margin: 14px 0 0;
+  padding-left: 10px;
+  border-left: 3px solid #2a3140;
+  color: #8b98a9;
+  font-size: 12px;
+  font-style: italic;
+}

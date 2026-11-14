@@ -1,6 +1,7 @@
 services:
   db:
     image: postgres:16
+    command: postgres -c shared_buffers=64MB -c max_connections=30 -c work_mem=4MB -c maintenance_work_mem=32MB
     restart: unless-stopped
     environment:
       POSTGRES_DB: steamcount
