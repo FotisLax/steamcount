@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://steamcount.duckdns.org";
 
 const qInput = document.getElementById("q");
 const statusEl = document.getElementById("status");
