@@ -18,3 +18,5 @@ So i created this extension that collects Steam player counts into PostgreSQL an
 4. Click "Load Unpacked" and select the extension folder.
 5. Now check the extension on your browser and type any game on Steam.
 6. Enjoy!
+
+The addon is now available on Firefox Add-On store under the name "PlayerCount" (Free of course)
